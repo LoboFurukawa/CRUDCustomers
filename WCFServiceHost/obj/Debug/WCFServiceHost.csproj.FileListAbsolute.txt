@@ -1,0 +1,7 @@
+D:\Project\CRUDCustomers\WCFServiceHost\bin\Debug\WCFServiceHost.dll.config
+D:\Project\CRUDCustomers\WCFServiceHost\bin\Debug\WCFServiceHost.dll
+D:\Project\CRUDCustomers\WCFServiceHost\bin\Debug\WCFServiceHost.pdb
+D:\Project\CRUDCustomers\WCFServiceHost\obj\Debug\WCFServiceHost.csproj.AssemblyReference.cache
+D:\Project\CRUDCustomers\WCFServiceHost\obj\Debug\WCFServiceHost.csproj.CoreCompileInputs.cache
+D:\Project\CRUDCustomers\WCFServiceHost\obj\Debug\WCFServiceHost.dll
+D:\Project\CRUDCustomers\WCFServiceHost\obj\Debug\WCFServiceHost.pdb
