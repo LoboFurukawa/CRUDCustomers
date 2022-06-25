@@ -45,7 +45,7 @@ namespace WCFServiceHost
                 BirthDate,
                 Gender,
                 IdMaritalStatus) 
-         values(@CPF,
+       output INSERTED.ID  values(@CPF,
                 @Name,
                 @RG,
                 @ShippingDate,
@@ -63,8 +63,41 @@ namespace WCFServiceHost
             cmd.Parameters.AddWithValue("@BirthDate", customersInfo.BirthDate);
             cmd.Parameters.AddWithValue("@Gender", customersInfo.Gender);
             cmd.Parameters.AddWithValue("@IdMaritalStatus", customersInfo.IdMaritalStatus);
-            int result = cmd.ExecuteNonQuery();
-            if (result == 1)
+            //int result = cmd.ExecuteNonQuery();
+            int result = (int)cmd.ExecuteScalar();
+            con.Close();
+
+            con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CustomersCRUD;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            con.Open();
+            cmd = new SqlCommand(@"INSERT INTO TB_Address(
+                PostalCode,
+                Street,
+                Number,
+                Complement,
+                Neighborhood,
+                City,
+                IdUf,
+                IdCustomer) 
+       values(  @PostalCode,
+                @Street,
+                @Number,
+                @Complement,
+                @Neighborhood,
+                @City,
+                @IdUf,
+                @IdCustomer)", con);
+            cmd.Parameters.AddWithValue("@PostalCode", customersInfo.Address.PostalCode);
+            cmd.Parameters.AddWithValue("@Street", customersInfo.Address.Street);
+            cmd.Parameters.AddWithValue("@Number", customersInfo.Address.Number);
+            cmd.Parameters.AddWithValue("@Complement", customersInfo.Address.Complement);
+            cmd.Parameters.AddWithValue("@Neighborhood", customersInfo.Address.Neighborhood);
+            cmd.Parameters.AddWithValue("@City", customersInfo.Address.City);
+            cmd.Parameters.AddWithValue("@IdUf", customersInfo.Address.IdUF);
+            cmd.Parameters.AddWithValue("@IdCustomer", result);
+
+            int resultfinal = cmd.ExecuteNonQuery();
+
+            if (resultfinal == 1)
             {
                 Message = customersInfo.Name + " Details inserted successfully";
             }
@@ -72,7 +105,8 @@ namespace WCFServiceHost
             {
                 Message = customersInfo.Name + " Details not inserted successfully";
             }
-            con.Close();
+            if (con.State == System.Data.ConnectionState.Open)
+                con.Close();
             return Message;
         }
 

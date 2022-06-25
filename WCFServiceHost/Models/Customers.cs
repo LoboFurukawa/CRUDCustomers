@@ -18,6 +18,7 @@ namespace WCFServiceHost.Models
         int idUF = 0;
         int idMaritalStatus = 0;
         string gender = string.Empty;
+        Address address = new Address();
 
         [DataMember]
         public string CPF
@@ -72,6 +73,12 @@ namespace WCFServiceHost.Models
         {
             get { return gender; }
             set { gender = value; }
+        }
+        [DataMember]
+        public Address Address
+        {
+            get { return address; }
+            set { address = value; }
         }
     }
 }

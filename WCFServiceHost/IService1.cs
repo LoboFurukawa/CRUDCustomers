@@ -28,6 +28,9 @@ namespace WCFServiceHost
         string InsertUFs(UFs uFs);
         [OperationContract]
         string InsertDispatchAgency(DispatchAgency dispatchAgency);
+        //Get
+        //Updates
+        //Deletes
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
