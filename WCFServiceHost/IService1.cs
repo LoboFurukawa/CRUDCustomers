@@ -29,6 +29,14 @@ namespace WCFServiceHost
         [OperationContract]
         string InsertDispatchAgency(DispatchAgency dispatchAgency);
         //Get
+        [OperationContract]
+        List<Customers> GetCustomers();
+        [OperationContract]
+        List<MaritalStatus> GetMaritalStatus();
+        [OperationContract]
+        List<DispatchAgency> GetDispatchAgency();
+        [OperationContract]
+        List<UFs> GetUFs();
         //Updates
         //Deletes
     }

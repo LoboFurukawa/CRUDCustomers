@@ -9,6 +9,7 @@ namespace WCFServiceHost.Models
 {
     public class Customers
     {
+        int id = 0;
         string cpf = string.Empty;
         string name = string.Empty;
         string rg = string.Empty;
@@ -25,6 +26,12 @@ namespace WCFServiceHost.Models
         {
             get { return cpf; }
             set { cpf = value; }
+        }
+        [DataMember]
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
         }
         [DataMember]
         public string Name

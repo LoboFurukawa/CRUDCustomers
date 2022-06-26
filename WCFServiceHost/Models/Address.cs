@@ -9,6 +9,7 @@ namespace WCFServiceHost.Models
 {
     public class Address
     {
+        int id = 0;
         string postalCode = string.Empty;
         string street = string.Empty;
         int number = 0;
@@ -18,6 +19,12 @@ namespace WCFServiceHost.Models
         int idUF = 0;
         int idCustomer = 0;
 
+        [DataMember]
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
         [DataMember]
         public string PostalCode
         {

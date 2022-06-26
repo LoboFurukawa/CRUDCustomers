@@ -9,8 +9,15 @@ namespace WCFServiceHost.Models
 {
     public class DispatchAgency
     {
+        int id = 0;
         string description = string.Empty;
 
+        [DataMember]
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
         [DataMember]
         public string Description
         {
