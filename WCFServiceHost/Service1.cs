@@ -29,7 +29,7 @@ namespace WCFServiceHost
             }
             return composite;
         }
-
+        //Inserts
         public string InsertCustomers(Customers customersInfo)
         {
             string Message;
@@ -206,7 +206,7 @@ namespace WCFServiceHost
 
             return Message;
         }
-
+        //Gets
         public List<Customers> GetCustomers()
         {
             try
@@ -325,6 +325,139 @@ namespace WCFServiceHost
 
                 throw ex;
             }
+        }
+        //Updates
+        public string UpdateCustomers(Customers customersInfo)
+        {
+            string Message;
+            try
+            {
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                con.Open();
+                SqlCommand cmd = new SqlCommand(@"UPDATE TB_Customers(
+                Id
+                CPF,
+                Name,
+                RG,
+                ShippingDate,
+                IdDispatchAgency,
+                IdUF,
+                BirthDate,
+                Gender,
+                IdMaritalStatus) 
+       output INSERTED.ID  values(@CPF,
+                @Name,
+                @RG,
+                @ShippingDate,
+                @IdDispatchAgency,
+                @IdUF,
+                @BirthDate,
+                @Gender,
+                @IdMaritalStatus)", con);
+                cmd.Parameters.AddWithValue("@Id", customersInfo.Id);
+                cmd.Parameters.AddWithValue("@CPF", customersInfo.CPF);
+                cmd.Parameters.AddWithValue("@Name", customersInfo.Name);
+                cmd.Parameters.AddWithValue("@RG", customersInfo.RG);
+                cmd.Parameters.AddWithValue("@ShippingDate", customersInfo.ShippingDate);
+                cmd.Parameters.AddWithValue("@IdDispatchAgency", customersInfo.IdDispatchAgency);
+                cmd.Parameters.AddWithValue("@IdUF", customersInfo.IdUF);
+                cmd.Parameters.AddWithValue("@BirthDate", customersInfo.BirthDate);
+                cmd.Parameters.AddWithValue("@Gender", customersInfo.Gender);
+                cmd.Parameters.AddWithValue("@IdMaritalStatus", customersInfo.IdMaritalStatus);
+                //int result = cmd.ExecuteNonQuery();
+                int result = (int)cmd.ExecuteScalar();
+                con.Close();
+
+                con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                con.Open();
+                cmd = new SqlCommand(@"UPDATE TB_Address(
+                Id,
+                PostalCode,
+                Street,
+                Number,
+                Complement,
+                Neighborhood,
+                City,
+                IdUf,
+                IdCustomer) 
+       values(  @PostalCode,
+                @Street,
+                @Number,
+                @Complement,
+                @Neighborhood,
+                @City,
+                @IdUf,
+                @IdCustomer)", con);
+                cmd.Parameters.AddWithValue("@Id", customersInfo.Address.Id);
+                cmd.Parameters.AddWithValue("@PostalCode", customersInfo.Address.PostalCode);
+                cmd.Parameters.AddWithValue("@Street", customersInfo.Address.Street);
+                cmd.Parameters.AddWithValue("@Number", customersInfo.Address.Number);
+                cmd.Parameters.AddWithValue("@Complement", customersInfo.Address.Complement);
+                cmd.Parameters.AddWithValue("@Neighborhood", customersInfo.Address.Neighborhood);
+                cmd.Parameters.AddWithValue("@City", customersInfo.Address.City);
+                cmd.Parameters.AddWithValue("@IdUf", customersInfo.Address.IdUF);
+                cmd.Parameters.AddWithValue("@IdCustomer", result);
+
+                int resultfinal = cmd.ExecuteNonQuery();
+
+                if (resultfinal == 1)
+                {
+                    Message = customersInfo.Name + " Details update successfully";
+                }
+                else
+                {
+                    Message = customersInfo.Name + " Details not update successfully";
+                }
+                if (con.State == System.Data.ConnectionState.Open)
+                    con.Close();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+            return Message;
+        }
+        //Deletes
+        public string DeleteCustomers(Customers customersInfo)
+        {
+            string Message;
+            try
+            {
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                con.Open();
+                SqlCommand cmd = new SqlCommand(@"DELETE TB_Address WHERE IdCustomer = @IdCustomer", con);
+                cmd.Parameters.AddWithValue("@IdCustomer", customersInfo.Id);
+                int result = cmd.ExecuteNonQuery();
+                con.Close();
+
+                con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                con.Open();
+                cmd = new SqlCommand(@"DELETE TB_Customers WHERE Id = @Id", con);
+                cmd.Parameters.AddWithValue("@Id", customersInfo.Id);
+                int resultfinal = cmd.ExecuteNonQuery();
+
+                if (resultfinal == 1)
+                {
+                    Message = customersInfo.Name + " Details delete successfully";
+                }
+                else
+                {
+                    Message = customersInfo.Name + " Details not delete successfully";
+                }
+                if (con.State == System.Data.ConnectionState.Open)
+                    con.Close();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+            return Message;
         }
     }
 }
