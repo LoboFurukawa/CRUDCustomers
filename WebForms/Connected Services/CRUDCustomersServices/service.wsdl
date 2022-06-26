@@ -5,6 +5,8 @@
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/WCFServiceHost" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/WCFServiceHost.Models" />
+      <xsd:import />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_GetData_InputMessage">
@@ -19,6 +21,78 @@
   <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_InsertCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCustomers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertMaritalStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMaritalStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertMaritalStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMaritalStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertUFs_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUFs" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertUFs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUFsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertDispatchAgency_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDispatchAgency" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertDispatchAgency_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDispatchAgencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMaritalStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaritalStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMaritalStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaritalStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDispatchAgency_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDispatchAgency" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDispatchAgency_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDispatchAgencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUFs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUFs" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUFs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUFsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCustomerById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerById" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCustomerById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAddressCustomerById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressCustomerById" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAddressCustomerById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressCustomerByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomersResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -27,6 +101,54 @@
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCustomers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertCustomers" message="tns:IService1_InsertCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertCustomersResponse" message="tns:IService1_InsertCustomers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMaritalStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertMaritalStatus" message="tns:IService1_InsertMaritalStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertMaritalStatusResponse" message="tns:IService1_InsertMaritalStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUFs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertUFs" message="tns:IService1_InsertUFs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertUFsResponse" message="tns:IService1_InsertUFs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDispatchAgency">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertDispatchAgency" message="tns:IService1_InsertDispatchAgency_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertDispatchAgencyResponse" message="tns:IService1_InsertDispatchAgency_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCustomers" message="tns:IService1_GetCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCustomersResponse" message="tns:IService1_GetCustomers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaritalStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetMaritalStatus" message="tns:IService1_GetMaritalStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetMaritalStatusResponse" message="tns:IService1_GetMaritalStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDispatchAgency">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDispatchAgency" message="tns:IService1_GetDispatchAgency_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDispatchAgencyResponse" message="tns:IService1_GetDispatchAgency_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUFs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUFs" message="tns:IService1_GetUFs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUFsResponse" message="tns:IService1_GetUFs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCustomerById" message="tns:IService1_GetCustomerById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCustomerByIdResponse" message="tns:IService1_GetCustomerById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressCustomerById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAddressCustomerById" message="tns:IService1_GetAddressCustomerById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAddressCustomerByIdResponse" message="tns:IService1_GetAddressCustomerById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateCustomers" message="tns:IService1_UpdateCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateCustomersResponse" message="tns:IService1_UpdateCustomers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteCustomers" message="tns:IService1_DeleteCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteCustomersResponse" message="tns:IService1_DeleteCustomers_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -42,6 +164,114 @@
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCustomers">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMaritalStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertMaritalStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUFs">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertUFs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDispatchAgency">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertDispatchAgency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomers">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaritalStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetMaritalStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDispatchAgency">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDispatchAgency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUFs">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetUFs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerById">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetCustomerById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressCustomerById">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAddressCustomerById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomers">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomers">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteCustomers" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFServiceHost.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFServiceHost.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Customers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="tns:Address" />
+      <xs:element minOccurs="0" name="BirthDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CPF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdDispatchAgency" type="xs:int" />
+      <xs:element minOccurs="0" name="IdMaritalStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUF" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Customers" nillable="true" type="tns:Customers" />
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Complement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdCustomer" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUF" type="xs:int" />
+      <xs:element minOccurs="0" name="Neighborhood" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Number" type="xs:int" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address" />
+  <xs:complexType name="MaritalStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaritalStatus" nillable="true" type="tns:MaritalStatus" />
+  <xs:complexType name="UFs">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UFs" nillable="true" type="tns:UFs" />
+  <xs:complexType name="DispatchAgency">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DispatchAgency" nillable="true" type="tns:DispatchAgency" />
+  <xs:complexType name="ArrayOfMaritalStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MaritalStatus" nillable="true" type="tns:MaritalStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaritalStatus" nillable="true" type="tns:ArrayOfMaritalStatus" />
+  <xs:complexType name="ArrayOfDispatchAgency">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DispatchAgency" nillable="true" type="tns:DispatchAgency" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDispatchAgency" nillable="true" type="tns:ArrayOfDispatchAgency" />
+  <xs:complexType name="ArrayOfUFs">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UFs" nillable="true" type="tns:UFs" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUFs" nillable="true" type="tns:ArrayOfUFs" />
+</xs:schema>

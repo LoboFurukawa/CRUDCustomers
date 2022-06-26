@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -30,13 +31,17 @@ namespace WCFServiceHost
         string InsertDispatchAgency(DispatchAgency dispatchAgency);
         //Gets
         [OperationContract]
-        List<Customers> GetCustomers();
+        DataSet GetCustomers();
         [OperationContract]
         List<MaritalStatus> GetMaritalStatus();
         [OperationContract]
         List<DispatchAgency> GetDispatchAgency();
         [OperationContract]
         List<UFs> GetUFs();
+        [OperationContract]
+        DataSet GetCustomerById(Customers customersInfo);
+        [OperationContract]
+        DataSet GetAddressCustomerById(Customers customers);
         //Updates
         [OperationContract]
         string UpdateCustomers(Customers customersInfo);

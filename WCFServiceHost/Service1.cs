@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -12,6 +13,7 @@ namespace WCFServiceHost
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
     public class Service1 : IService1
     {
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
@@ -35,7 +37,7 @@ namespace WCFServiceHost
             string Message;
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
                 con.Open();
                 SqlCommand cmd = new SqlCommand(@"INSERT INTO TB_Customers(
                 CPF,
@@ -125,7 +127,7 @@ namespace WCFServiceHost
             string Message;
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
                 con.Open();
                 SqlCommand cmd = new SqlCommand(@"INSERT INTO TB_MaritalStatus(Description) values (@Description)", con);
                 cmd.Parameters.AddWithValue("@Description", maritalStatus.Description);
@@ -154,7 +156,7 @@ namespace WCFServiceHost
             string Message;
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
                 con.Open();
                 SqlCommand cmd = new SqlCommand(@"INSERT INTO TB_UFs(Description) values (@Description)", con);
                 cmd.Parameters.AddWithValue("@Description", uFs.Description);
@@ -183,7 +185,7 @@ namespace WCFServiceHost
             string Message;
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
                 con.Open();
                 SqlCommand cmd = new SqlCommand(@"INSERT INTO TB_DispatchAgency(Description) values (@Description)", con);
                 cmd.Parameters.AddWithValue("@Description", dispatchAgency.Description);
@@ -207,34 +209,22 @@ namespace WCFServiceHost
             return Message;
         }
         //Gets
-        public List<Customers> GetCustomers()
+        public DataSet GetCustomers()
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-                con.Open();
+                //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
                 SqlCommand cmd = new SqlCommand(@"SELECT * FROM TB_Customers", con);
-                var result = cmd.ExecuteReader();
-                List<Customers> ListCustomers = new List<Customers>();
-
-                while (result.Read())
+                if (con.State == ConnectionState.Closed)
                 {
-                    Customers func = new Customers();
-
-                    func.Id = result.GetInt32(0);
-                    func.CPF = result.GetString(1);
-                    func.Name = result.GetString(2);
-                    func.RG = result.GetString(3);
-                    func.ShippingDate = result.GetDateTime(4);
-                    func.IdDispatchAgency = result.GetInt32(5);
-                    func.IdUF = result.GetInt32(6);
-                    func.BirthDate = result.GetDateTime(7);
-                    func.Gender = result.GetString(8);
-                    func.IdMaritalStatus = result.GetInt32(9);
-                    ListCustomers.Add(func);
+                    con.Open();
                 }
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                cmd.ExecuteNonQuery();
                 con.Close();
-                return ListCustomers;
+                return ds;
             }
             catch (Exception ex)
             {
@@ -247,7 +237,7 @@ namespace WCFServiceHost
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
                 con.Open();
                 SqlCommand cmd = new SqlCommand(@"SELECT * FROM TB_MaritalStatus", con);
                 var result = cmd.ExecuteReader();
@@ -275,7 +265,7 @@ namespace WCFServiceHost
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
                 con.Open();
                 SqlCommand cmd = new SqlCommand(@"SELECT * FROM TB_DispatchAgency", con);
                 var result = cmd.ExecuteReader();
@@ -303,7 +293,7 @@ namespace WCFServiceHost
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
                 con.Open();
                 SqlCommand cmd = new SqlCommand(@"SELECT * FROM TB_UFs", con);
                 var result = cmd.ExecuteReader();
@@ -326,13 +316,43 @@ namespace WCFServiceHost
                 throw ex;
             }
         }
+        public DataSet GetCustomerById(Customers customers)   
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM TB_Customers WHERE Id = @Id", con);
+            cmd.Parameters.AddWithValue("@Id", customers.Id);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            return ds;
+        }
+        public DataSet GetAddressCustomerById(Customers customers)  
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM TB_Address WHERE IdCustomer = @IdCustomer", con);
+            cmd.Parameters.AddWithValue("@IdCustomer", customers.Id);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            return ds;
+        }
         //Updates
         public string UpdateCustomers(Customers customersInfo)
         {
             string Message;
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
                 con.Open();
                 SqlCommand cmd = new SqlCommand(@"UPDATE TB_Customers(
                 Id
@@ -426,7 +446,7 @@ namespace WCFServiceHost
             string Message;
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
                 con.Open();
                 SqlCommand cmd = new SqlCommand(@"DELETE TB_Address WHERE IdCustomer = @IdCustomer", con);
                 cmd.Parameters.AddWithValue("@IdCustomer", customersInfo.Id);

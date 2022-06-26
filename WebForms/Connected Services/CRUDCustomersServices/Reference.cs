@@ -74,6 +74,567 @@ namespace WebForms.CRUDCustomersServices {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Customers", Namespace="http://schemas.datacontract.org/2004/07/WCFServiceHost.Models")]
+    [System.SerializableAttribute()]
+    public partial class Customers : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebForms.CRUDCustomersServices.Address AddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime BirthDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CPFField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GenderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdDispatchAgencyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdMaritalStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdUFField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RGField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ShippingDateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebForms.CRUDCustomersServices.Address Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime BirthDate {
+            get {
+                return this.BirthDateField;
+            }
+            set {
+                if ((this.BirthDateField.Equals(value) != true)) {
+                    this.BirthDateField = value;
+                    this.RaisePropertyChanged("BirthDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CPF {
+            get {
+                return this.CPFField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CPFField, value) != true)) {
+                    this.CPFField = value;
+                    this.RaisePropertyChanged("CPF");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Gender {
+            get {
+                return this.GenderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GenderField, value) != true)) {
+                    this.GenderField = value;
+                    this.RaisePropertyChanged("Gender");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdDispatchAgency {
+            get {
+                return this.IdDispatchAgencyField;
+            }
+            set {
+                if ((this.IdDispatchAgencyField.Equals(value) != true)) {
+                    this.IdDispatchAgencyField = value;
+                    this.RaisePropertyChanged("IdDispatchAgency");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdMaritalStatus {
+            get {
+                return this.IdMaritalStatusField;
+            }
+            set {
+                if ((this.IdMaritalStatusField.Equals(value) != true)) {
+                    this.IdMaritalStatusField = value;
+                    this.RaisePropertyChanged("IdMaritalStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdUF {
+            get {
+                return this.IdUFField;
+            }
+            set {
+                if ((this.IdUFField.Equals(value) != true)) {
+                    this.IdUFField = value;
+                    this.RaisePropertyChanged("IdUF");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RG {
+            get {
+                return this.RGField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RGField, value) != true)) {
+                    this.RGField = value;
+                    this.RaisePropertyChanged("RG");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ShippingDate {
+            get {
+                return this.ShippingDateField;
+            }
+            set {
+                if ((this.ShippingDateField.Equals(value) != true)) {
+                    this.ShippingDateField = value;
+                    this.RaisePropertyChanged("ShippingDate");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Address", Namespace="http://schemas.datacontract.org/2004/07/WCFServiceHost.Models")]
+    [System.SerializableAttribute()]
+    public partial class Address : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ComplementField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdCustomerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdUFField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NeighborhoodField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PostalCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StreetField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string City {
+            get {
+                return this.CityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CityField, value) != true)) {
+                    this.CityField = value;
+                    this.RaisePropertyChanged("City");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Complement {
+            get {
+                return this.ComplementField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ComplementField, value) != true)) {
+                    this.ComplementField = value;
+                    this.RaisePropertyChanged("Complement");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdCustomer {
+            get {
+                return this.IdCustomerField;
+            }
+            set {
+                if ((this.IdCustomerField.Equals(value) != true)) {
+                    this.IdCustomerField = value;
+                    this.RaisePropertyChanged("IdCustomer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdUF {
+            get {
+                return this.IdUFField;
+            }
+            set {
+                if ((this.IdUFField.Equals(value) != true)) {
+                    this.IdUFField = value;
+                    this.RaisePropertyChanged("IdUF");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Neighborhood {
+            get {
+                return this.NeighborhoodField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NeighborhoodField, value) != true)) {
+                    this.NeighborhoodField = value;
+                    this.RaisePropertyChanged("Neighborhood");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Number {
+            get {
+                return this.NumberField;
+            }
+            set {
+                if ((this.NumberField.Equals(value) != true)) {
+                    this.NumberField = value;
+                    this.RaisePropertyChanged("Number");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PostalCode {
+            get {
+                return this.PostalCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PostalCodeField, value) != true)) {
+                    this.PostalCodeField = value;
+                    this.RaisePropertyChanged("PostalCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Street {
+            get {
+                return this.StreetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StreetField, value) != true)) {
+                    this.StreetField = value;
+                    this.RaisePropertyChanged("Street");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MaritalStatus", Namespace="http://schemas.datacontract.org/2004/07/WCFServiceHost.Models")]
+    [System.SerializableAttribute()]
+    public partial class MaritalStatus : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UFs", Namespace="http://schemas.datacontract.org/2004/07/WCFServiceHost.Models")]
+    [System.SerializableAttribute()]
+    public partial class UFs : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DispatchAgency", Namespace="http://schemas.datacontract.org/2004/07/WCFServiceHost.Models")]
+    [System.SerializableAttribute()]
+    public partial class DispatchAgency : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CRUDCustomersServices.IService1")]
     public interface IService1 {
@@ -89,6 +650,78 @@ namespace WebForms.CRUDCustomersServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         System.Threading.Tasks.Task<WebForms.CRUDCustomersServices.CompositeType> GetDataUsingDataContractAsync(WebForms.CRUDCustomersServices.CompositeType composite);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertCustomers", ReplyAction="http://tempuri.org/IService1/InsertCustomersResponse")]
+        string InsertCustomers(WebForms.CRUDCustomersServices.Customers customersInfo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertCustomers", ReplyAction="http://tempuri.org/IService1/InsertCustomersResponse")]
+        System.Threading.Tasks.Task<string> InsertCustomersAsync(WebForms.CRUDCustomersServices.Customers customersInfo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertMaritalStatus", ReplyAction="http://tempuri.org/IService1/InsertMaritalStatusResponse")]
+        string InsertMaritalStatus(WebForms.CRUDCustomersServices.MaritalStatus maritalStatus);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertMaritalStatus", ReplyAction="http://tempuri.org/IService1/InsertMaritalStatusResponse")]
+        System.Threading.Tasks.Task<string> InsertMaritalStatusAsync(WebForms.CRUDCustomersServices.MaritalStatus maritalStatus);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertUFs", ReplyAction="http://tempuri.org/IService1/InsertUFsResponse")]
+        string InsertUFs(WebForms.CRUDCustomersServices.UFs uFs);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertUFs", ReplyAction="http://tempuri.org/IService1/InsertUFsResponse")]
+        System.Threading.Tasks.Task<string> InsertUFsAsync(WebForms.CRUDCustomersServices.UFs uFs);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertDispatchAgency", ReplyAction="http://tempuri.org/IService1/InsertDispatchAgencyResponse")]
+        string InsertDispatchAgency(WebForms.CRUDCustomersServices.DispatchAgency dispatchAgency);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertDispatchAgency", ReplyAction="http://tempuri.org/IService1/InsertDispatchAgencyResponse")]
+        System.Threading.Tasks.Task<string> InsertDispatchAgencyAsync(WebForms.CRUDCustomersServices.DispatchAgency dispatchAgency);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCustomers", ReplyAction="http://tempuri.org/IService1/GetCustomersResponse")]
+        System.Data.DataSet GetCustomers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCustomers", ReplyAction="http://tempuri.org/IService1/GetCustomersResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> GetCustomersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetMaritalStatus", ReplyAction="http://tempuri.org/IService1/GetMaritalStatusResponse")]
+        WebForms.CRUDCustomersServices.MaritalStatus[] GetMaritalStatus();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetMaritalStatus", ReplyAction="http://tempuri.org/IService1/GetMaritalStatusResponse")]
+        System.Threading.Tasks.Task<WebForms.CRUDCustomersServices.MaritalStatus[]> GetMaritalStatusAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDispatchAgency", ReplyAction="http://tempuri.org/IService1/GetDispatchAgencyResponse")]
+        WebForms.CRUDCustomersServices.DispatchAgency[] GetDispatchAgency();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDispatchAgency", ReplyAction="http://tempuri.org/IService1/GetDispatchAgencyResponse")]
+        System.Threading.Tasks.Task<WebForms.CRUDCustomersServices.DispatchAgency[]> GetDispatchAgencyAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUFs", ReplyAction="http://tempuri.org/IService1/GetUFsResponse")]
+        WebForms.CRUDCustomersServices.UFs[] GetUFs();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUFs", ReplyAction="http://tempuri.org/IService1/GetUFsResponse")]
+        System.Threading.Tasks.Task<WebForms.CRUDCustomersServices.UFs[]> GetUFsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCustomerById", ReplyAction="http://tempuri.org/IService1/GetCustomerByIdResponse")]
+        System.Data.DataSet GetCustomerById(WebForms.CRUDCustomersServices.Customers customersInfo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCustomerById", ReplyAction="http://tempuri.org/IService1/GetCustomerByIdResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> GetCustomerByIdAsync(WebForms.CRUDCustomersServices.Customers customersInfo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAddressCustomerById", ReplyAction="http://tempuri.org/IService1/GetAddressCustomerByIdResponse")]
+        System.Data.DataSet GetAddressCustomerById(WebForms.CRUDCustomersServices.Customers customers);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAddressCustomerById", ReplyAction="http://tempuri.org/IService1/GetAddressCustomerByIdResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> GetAddressCustomerByIdAsync(WebForms.CRUDCustomersServices.Customers customers);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateCustomers", ReplyAction="http://tempuri.org/IService1/UpdateCustomersResponse")]
+        string UpdateCustomers(WebForms.CRUDCustomersServices.Customers customersInfo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateCustomers", ReplyAction="http://tempuri.org/IService1/UpdateCustomersResponse")]
+        System.Threading.Tasks.Task<string> UpdateCustomersAsync(WebForms.CRUDCustomersServices.Customers customersInfo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteCustomers", ReplyAction="http://tempuri.org/IService1/DeleteCustomersResponse")]
+        string DeleteCustomers(WebForms.CRUDCustomersServices.Customers customersInfo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteCustomers", ReplyAction="http://tempuri.org/IService1/DeleteCustomersResponse")]
+        System.Threading.Tasks.Task<string> DeleteCustomersAsync(WebForms.CRUDCustomersServices.Customers customersInfo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -132,6 +765,102 @@ namespace WebForms.CRUDCustomersServices {
         
         public System.Threading.Tasks.Task<WebForms.CRUDCustomersServices.CompositeType> GetDataUsingDataContractAsync(WebForms.CRUDCustomersServices.CompositeType composite) {
             return base.Channel.GetDataUsingDataContractAsync(composite);
+        }
+        
+        public string InsertCustomers(WebForms.CRUDCustomersServices.Customers customersInfo) {
+            return base.Channel.InsertCustomers(customersInfo);
+        }
+        
+        public System.Threading.Tasks.Task<string> InsertCustomersAsync(WebForms.CRUDCustomersServices.Customers customersInfo) {
+            return base.Channel.InsertCustomersAsync(customersInfo);
+        }
+        
+        public string InsertMaritalStatus(WebForms.CRUDCustomersServices.MaritalStatus maritalStatus) {
+            return base.Channel.InsertMaritalStatus(maritalStatus);
+        }
+        
+        public System.Threading.Tasks.Task<string> InsertMaritalStatusAsync(WebForms.CRUDCustomersServices.MaritalStatus maritalStatus) {
+            return base.Channel.InsertMaritalStatusAsync(maritalStatus);
+        }
+        
+        public string InsertUFs(WebForms.CRUDCustomersServices.UFs uFs) {
+            return base.Channel.InsertUFs(uFs);
+        }
+        
+        public System.Threading.Tasks.Task<string> InsertUFsAsync(WebForms.CRUDCustomersServices.UFs uFs) {
+            return base.Channel.InsertUFsAsync(uFs);
+        }
+        
+        public string InsertDispatchAgency(WebForms.CRUDCustomersServices.DispatchAgency dispatchAgency) {
+            return base.Channel.InsertDispatchAgency(dispatchAgency);
+        }
+        
+        public System.Threading.Tasks.Task<string> InsertDispatchAgencyAsync(WebForms.CRUDCustomersServices.DispatchAgency dispatchAgency) {
+            return base.Channel.InsertDispatchAgencyAsync(dispatchAgency);
+        }
+        
+        public System.Data.DataSet GetCustomers() {
+            return base.Channel.GetCustomers();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetCustomersAsync() {
+            return base.Channel.GetCustomersAsync();
+        }
+        
+        public WebForms.CRUDCustomersServices.MaritalStatus[] GetMaritalStatus() {
+            return base.Channel.GetMaritalStatus();
+        }
+        
+        public System.Threading.Tasks.Task<WebForms.CRUDCustomersServices.MaritalStatus[]> GetMaritalStatusAsync() {
+            return base.Channel.GetMaritalStatusAsync();
+        }
+        
+        public WebForms.CRUDCustomersServices.DispatchAgency[] GetDispatchAgency() {
+            return base.Channel.GetDispatchAgency();
+        }
+        
+        public System.Threading.Tasks.Task<WebForms.CRUDCustomersServices.DispatchAgency[]> GetDispatchAgencyAsync() {
+            return base.Channel.GetDispatchAgencyAsync();
+        }
+        
+        public WebForms.CRUDCustomersServices.UFs[] GetUFs() {
+            return base.Channel.GetUFs();
+        }
+        
+        public System.Threading.Tasks.Task<WebForms.CRUDCustomersServices.UFs[]> GetUFsAsync() {
+            return base.Channel.GetUFsAsync();
+        }
+        
+        public System.Data.DataSet GetCustomerById(WebForms.CRUDCustomersServices.Customers customersInfo) {
+            return base.Channel.GetCustomerById(customersInfo);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetCustomerByIdAsync(WebForms.CRUDCustomersServices.Customers customersInfo) {
+            return base.Channel.GetCustomerByIdAsync(customersInfo);
+        }
+        
+        public System.Data.DataSet GetAddressCustomerById(WebForms.CRUDCustomersServices.Customers customers) {
+            return base.Channel.GetAddressCustomerById(customers);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetAddressCustomerByIdAsync(WebForms.CRUDCustomersServices.Customers customers) {
+            return base.Channel.GetAddressCustomerByIdAsync(customers);
+        }
+        
+        public string UpdateCustomers(WebForms.CRUDCustomersServices.Customers customersInfo) {
+            return base.Channel.UpdateCustomers(customersInfo);
+        }
+        
+        public System.Threading.Tasks.Task<string> UpdateCustomersAsync(WebForms.CRUDCustomersServices.Customers customersInfo) {
+            return base.Channel.UpdateCustomersAsync(customersInfo);
+        }
+        
+        public string DeleteCustomers(WebForms.CRUDCustomersServices.Customers customersInfo) {
+            return base.Channel.DeleteCustomers(customersInfo);
+        }
+        
+        public System.Threading.Tasks.Task<string> DeleteCustomersAsync(WebForms.CRUDCustomersServices.Customers customersInfo) {
+            return base.Channel.DeleteCustomersAsync(customersInfo);
         }
     }
 }
