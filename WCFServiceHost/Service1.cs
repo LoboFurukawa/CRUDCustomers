@@ -316,7 +316,7 @@ namespace WCFServiceHost
                 throw ex;
             }
         }
-        public DataSet GetCustomerById(Customers customers)   
+        public DataSet GetCustomerById(Customers customers)
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM TB_Customers WHERE Id = @Id", con);
             cmd.Parameters.AddWithValue("@Id", customers.Id);
@@ -331,7 +331,7 @@ namespace WCFServiceHost
             con.Close();
             return ds;
         }
-        public DataSet GetAddressCustomerById(Customers customers)  
+        public DataSet GetAddressCustomerById(Customers customers)
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM TB_Address WHERE IdCustomer = @IdCustomer", con);
             cmd.Parameters.AddWithValue("@IdCustomer", customers.Id);
@@ -354,26 +354,16 @@ namespace WCFServiceHost
             {
                 //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
                 con.Open();
-                SqlCommand cmd = new SqlCommand(@"UPDATE TB_Customers(
-                Id
-                CPF,
-                Name,
-                RG,
-                ShippingDate,
-                IdDispatchAgency,
-                IdUF,
-                BirthDate,
-                Gender,
-                IdMaritalStatus) 
-       output INSERTED.ID  values(@CPF,
-                @Name,
-                @RG,
-                @ShippingDate,
-                @IdDispatchAgency,
-                @IdUF,
-                @BirthDate,
-                @Gender,
-                @IdMaritalStatus)", con);
+                SqlCommand cmd = new SqlCommand(@"UPDATE TB_Customers SET
+                CPF = @CPF,
+                Name = @Name,
+                RG = @RG,
+                ShippingDate = @ShippingDate,
+                IdDispatchAgency = @IdDispatchAgency,
+                IdUF = @IdUF,
+                BirthDate = @BirthDate,
+                Gender = @Gender,
+                IdMaritalStatus = @IdMaritalStatus WHERE Id= @Id", con);
                 cmd.Parameters.AddWithValue("@Id", customersInfo.Id);
                 cmd.Parameters.AddWithValue("@CPF", customersInfo.CPF);
                 cmd.Parameters.AddWithValue("@Name", customersInfo.Name);
@@ -385,29 +375,20 @@ namespace WCFServiceHost
                 cmd.Parameters.AddWithValue("@Gender", customersInfo.Gender);
                 cmd.Parameters.AddWithValue("@IdMaritalStatus", customersInfo.IdMaritalStatus);
                 //int result = cmd.ExecuteNonQuery();
-                int result = (int)cmd.ExecuteScalar();
+                int result = cmd.ExecuteNonQuery();
                 con.Close();
 
                 con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\PROJECT\CRUDCUSTOMERS\SQLSCRIPTS\CUSTOMERSCRUD.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
                 con.Open();
-                cmd = new SqlCommand(@"UPDATE TB_Address(
-                Id,
-                PostalCode,
-                Street,
-                Number,
-                Complement,
-                Neighborhood,
-                City,
-                IdUf,
-                IdCustomer) 
-       values(  @PostalCode,
-                @Street,
-                @Number,
-                @Complement,
-                @Neighborhood,
-                @City,
-                @IdUf,
-                @IdCustomer)", con);
+                cmd = new SqlCommand(@"UPDATE TB_Address SET
+                PostalCode = @PostalCode,
+                Street = @Street,
+                Number = @Number,
+                Complement = @Complement,
+                Neighborhood = @Neighborhood,
+                City = @City,
+                IdUf = @IdUf,
+                IdCustomer = @IdCustomer WHERE IdCustomer = @IdCustomer AND Id= @Id", con);
                 cmd.Parameters.AddWithValue("@Id", customersInfo.Address.Id);
                 cmd.Parameters.AddWithValue("@PostalCode", customersInfo.Address.PostalCode);
                 cmd.Parameters.AddWithValue("@Street", customersInfo.Address.Street);
@@ -416,7 +397,7 @@ namespace WCFServiceHost
                 cmd.Parameters.AddWithValue("@Neighborhood", customersInfo.Address.Neighborhood);
                 cmd.Parameters.AddWithValue("@City", customersInfo.Address.City);
                 cmd.Parameters.AddWithValue("@IdUf", customersInfo.Address.IdUF);
-                cmd.Parameters.AddWithValue("@IdCustomer", result);
+                cmd.Parameters.AddWithValue("@IdCustomer", customersInfo.Id);
 
                 int resultfinal = cmd.ExecuteNonQuery();
 
@@ -461,7 +442,7 @@ namespace WCFServiceHost
 
                 if (resultfinal == 1)
                 {
-                    Message = customersInfo.Name + " Details delete successfully";
+                    Message = customersInfo.Name + "Details delete successfully";
                 }
                 else
                 {

@@ -79,63 +79,133 @@
         <%--added script file for asp.net server controls validations--%>
     </head>
 
-    <body>
-        <fieldset>
-            <legend>Cliente</legend>
-            <%--            <table>--%>
-            <div class="row">
-                <div class="col-md-3">
-                    <label>CPF *</label>
-                </div>
-                <div class="col-md-3">
-                    <label>Nome *</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <asp:TextBox class="form-control" ID="txtCPF" runat="server" placeholder=""></asp:TextBox>
-                </div>
-                <div class="col-md-3">
-                    <asp:TextBox class="form-control" ID="txtName" runat="server" placeholder=""></asp:TextBox>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <label>RG</label>
-                </div>
-                <div class="col-md-3">
-                    <label>Data Expedição</label>
-                </div>
-                <div class="col-md-3">
-                    <label>Órgão expedição</label>
-                </div>
-                <div class="col-md-3">
-                    <label>UF Expedição</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <asp:TextBox class="form-control" ID="txtRG" runat="server"></asp:TextBox>
-                </div>
-                <div class="col-md-3">
-                    <asp:TextBox class="form-control" ID="txtShippingDate" runat="server">
-                    </asp:TextBox>
-                </div>
-                <div class="col-md-3">
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">Selecionar</a></li>
-                            <li><a href="#" value="M">Masculino</a></li>
-                            <li><a href="#" value="F">Feminino</a></li>
-                        </ul>
-                    </div>
 
-                </div>
-                <div class="col-md-3">
-                    <div class="dropdown">
+    <fieldset>
+        <legend>Cliente</legend>
+        <div class="row">
+            <div class="col-md-3">
+                <label>CPF *</label>
+            </div>
+            <div class="col-md-3">
+                <label>Nome *</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <asp:TextBox class="form-control" ID="txtCPF" runat="server" placeholder="000.000.000.00"></asp:TextBox>
+            </div>
+            <div class="col-md-3">
+                <asp:TextBox class="form-control" ID="txtName" runat="server" placeholder=""></asp:TextBox>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label>RG</label>
+            </div>
+            <div class="col-md-3">
+                <label>Data Expedição</label>
+            </div>
+            <div class="col-md-3">
+                <label>Órgão expedição</label>
+            </div>
+            <div class="col-md-3">
+                <label>UF Expedição</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <asp:TextBox class="form-control" ID="txtRG" runat="server"></asp:TextBox>
+            </div>
+            <div class="col-md-3">
+                <asp:TextBox class="form-control" ID="txtShippingDate" runat="server" placeholder="00/00/0000">
+                </asp:TextBox>
+            </div>
+            <div class="col-md-3">
+                <asp:DropDownList ID="lstDispatchAgency" runat="server"></asp:DropDownList>
+            </div>
+            <div class="col-md-3">
+                <asp:DropDownList ID="lstUFsCustomers" runat="server"></asp:DropDownList>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label>Data de Nascimento *</label>
+            </div>
+            <div class="col-md-3">
+                <label>Sexo *</label>
+            </div>
+            <div class="col-md-3">
+                <label>Estado civil *</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <asp:TextBox class="form-control" ID="txtBirthDate" runat="server" placeholder="00/00/0000"></asp:TextBox>
+            </div>
+            <div class="col-md-3">
+                <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:ListItem Text="Selecionar" Value="*" />
+                    <asp:ListItem Text="Feminino" Value="F" />
+                    <asp:ListItem Text="Masculino" Value="M" />
+                </asp:DropDownList>
+            </div>
+            <div class="col-md-3">
+                <asp:DropDownList ID="lstMaritalStatus" runat="server"></asp:DropDownList>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label>CEP *</label>
+            </div>
+            <div class="col-md-3">
+                <label>Rua *</label>
+            </div>
+            <div class="col-md-3">
+                <label>Numero *</label>
+            </div>
+            <div class="col-md-3">
+                <label>Complemento </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" style="display: none">
+                <asp:TextBox class="form-control" ID="txtIdAddress" runat="server"></asp:TextBox>
+            </div>
+            <div class="col-md-3">
+                <asp:TextBox class="form-control" ID="txtCEP" runat="server"></asp:TextBox>
+                <button class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            </div>
+            <div class="col-md-3">
+                <asp:TextBox class="form-control" ID="txtStreet" runat="server"></asp:TextBox>
+            </div>
+            <div class="col-md-3">
+                <asp:TextBox class="form-control" ID="txtNumber" runat="server"></asp:TextBox>
+            </div>
+            <div class="col-md-3">
+                <asp:TextBox class="form-control" ID="txtComplement" runat="server"></asp:TextBox>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label>Bairro *</label>
+            </div>
+            <div class="col-md-3">
+                <label>Cidade *</label>
+            </div>
+            <div class="col-md-3">
+                <label>UF *</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <asp:TextBox class="form-control" ID="txtNeighborhood" runat="server"></asp:TextBox>
+            </div>
+            <div class="col-md-3">
+                <asp:TextBox class="form-control" ID="txtCity" runat="server"></asp:TextBox>
+            </div>
+            <div class="col-md-3">
+                <asp:DropDownList ID="lstUFs" runat="server"></asp:DropDownList>
+                <%--<div class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             UF
                                 <span class="caret"></span>
@@ -147,189 +217,81 @@
                             <li role="separator" class="divider"></li>
                             <li><a href="#">Separated link</a></li>
                         </ul>
-                    </div>
-                </div>
+                    </div>--%>
             </div>
-            <%--</div>--%>
-            <div class="row">
-                <div class="col-md-3">
-                    <label>Data de Nascimento *</label>
-                </div>
-                <div class="col-md-3">
-                    <label>Sexo *</label>
-                </div>
-                <div class="col-md-3">
-                    <label>Estado civil *</label>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
             </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <asp:TextBox class="form-control" ID="txtBirthDate" runat="server"></asp:TextBox>
-                </div>
-                <div class="col-md-3">
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">Selecionar</a></li>
-                            <li><a href="#" value="M">Masculino</a></li>
-                            <li><a href="#" value="F">Feminino</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <%--      <div class="col-md-3">
-                    <asp:TextBox class="form-control" ID="txtMaritalStatus" runat="serv --%>
-                <div class="col-md-3">
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">Selecionar</a></li>
-                            <li><a href="#" value="M">Masculino</a></li>
-                            <li><a href="#" value="F">Feminino</a></li>
-                        </ul>
-                    </div>
-                </div>
-                div>
+            <div class="col-md-4">
+                <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" Text="Adicionar" OnClick="btnSubmit_Click"></asp:Button>
+                <%--<span class="glyphicon glyphicon-arrow-right"></span>--%>
+                <%--<asp:Button ID="Button1" runat="server" class="button button4" Text="Submit"  OnClientClick="javascript:return Validation();"/>--%>
             </div>
-            <%--    </div>
-            </div>--%>
-            <div class="row">
-                <div class="col-md-3">
-                    <label>CEP *</label>
-                </div>
-                <div class="col-md-3">
-                    <label>Rua *</label>
-                </div>
-                <div class="col-md-3">
-                    <label>Numero *</label>
-                </div>
-                <div class="col-md-3">
-                    <label>Complemento </label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <asp:TextBox class="form-control" ID="txtCEP" runat="server"></asp:TextBox>
-                    <button class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                </div>
-                <div class="col-md-3">
-                    <asp:TextBox class="form-control" ID="txtStreet" runat="server"></asp:TextBox>
-                </div>
-                <div class="col-md-3">
-                    <asp:TextBox class="form-control" ID="txtNumber" runat="server"></asp:TextBox>
-                </div>
-                <div class="col-md-3">
-                    <asp:TextBox class="form-control" ID="txtComplement" runat="server"></asp:TextBox>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <label>Bairro *</label>
-                </div>
-                <div class="col-md-3">
-                    <label>Cidade *</label>
-                </div>
-                <div class="col-md-3">
-                    <label>UF *</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <asp:TextBox class="form-control" ID="txtNeighborhood" runat="server"></asp:TextBox>
-                </div>
-                <div class="col-md-3">
-                    <asp:TextBox class="form-control" ID="txtCity" runat="server"></asp:TextBox>
-                </div>
-                <div class="col-md-3">
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            UF
-                                <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8">
-                </div>
-                <div class="col-md-4">
-                    <button class="btn btn-primary">Atualizar <span class="glyphicon glyphicon-arrow-right"></span></button>
-                </div>
-            </div>
-            <%--</table>--%>
-        </fieldset>
-        <fieldset>
-            <%--added gridview style layout and functionality  here--%>
-            <asp:GridView ID="grdWcfTest" runat="server" AllowPaging="true" CellPadding="2" EnableModelValidation="True"
-                ForeColor="red" GridLines="Both" ItemStyle-HorizontalAlign="center" EmptyDataText="There Is No Records In Database!" AutoGenerateColumns="false" Width="1100px"
-                HeaderStyle-ForeColor="blue">
-                <HeaderStyle CssClass="DataGridFixedHeader" />
-                <RowStyle CssClass="grid_item" />
-                <AlternatingRowStyle CssClass="grid_alternate" />
-                <FooterStyle CssClass="DataGridFixedHeader" />
-                <Columns>
-                    <asp:TemplateField HeaderText="CPF">
-                        <HeaderStyle HorizontalAlign="Left" />
-                        <ItemStyle HorizontalAlign="Left" />
-                        <ItemTemplate>
-                            <asp:Label ID="lblCPF" runat="server" Text='<%#Eval("CPF") %>'>    
-                            </asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Name">
-                        <HeaderStyle HorizontalAlign="Left" />
-                        <ItemStyle HorizontalAlign="Left" />
-                        <ItemTemplate>
-                            <asp:Label ID="lblName" runat="server" Text='<%#Eval("Name")%>'>    
-                            </asp:Label>
-                            <asp:Label ID="lblId" runat="server" Visible="false" Text='<%#Eval("Id")%>'>    
-                            </asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="BirthDate">
-                        <HeaderStyle HorizontalAlign="Left" />
-                        <ItemStyle HorizontalAlign="Left" />
-                        <ItemTemplate>
-                            <asp:Label ID="lblBirthDate" runat="server" Text='<%#Eval("BirthDate") %>'>    
-                            </asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Edit">
-                        <HeaderStyle HorizontalAlign="Left" />
-                        <ItemStyle HorizontalAlign="Left" />
-                        <ItemTemplate>
-                            <asp:LinkButton ID="lnkEdit" runat="server" Text="Edit" CausesValidation="false"
-                                CommandArgument='    
+        </div>
+    </fieldset>
+    <fieldset>
+        <%--added gridview style layout and functionality  here--%>
+        <asp:GridView ID="grdWcfTest" runat="server" AllowPaging="true" CellPadding="2" EnableModelValidation="True"
+            ForeColor="red" GridLines="Both" ItemStyle-HorizontalAlign="center" EmptyDataText="There Is No Records In Database!" AutoGenerateColumns="false" Width="1100px"
+            HeaderStyle-ForeColor="blue">
+            <HeaderStyle CssClass="DataGridFixedHeader" />
+            <RowStyle CssClass="grid_item" />
+            <AlternatingRowStyle CssClass="grid_alternate" />
+            <FooterStyle CssClass="DataGridFixedHeader" />
+            <Columns>
+                <asp:TemplateField HeaderText="CPF">
+                    <HeaderStyle HorizontalAlign="Left" />
+                    <ItemStyle HorizontalAlign="Left" />
+                    <ItemTemplate>
+                        <asp:Label ID="lblCPF" runat="server" Text='<%#Eval("CPF") %>'>    
+                        </asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Name">
+                    <HeaderStyle HorizontalAlign="Left" />
+                    <ItemStyle HorizontalAlign="Left" />
+                    <ItemTemplate>
+                        <asp:Label ID="lblName" runat="server" Text='<%#Eval("Name")%>'>    
+                        </asp:Label>
+                        <asp:Label ID="lblId" runat="server" Visible="false" Text='<%#Eval("Id")%>'>    
+                        </asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="BirthDate">
+                    <HeaderStyle HorizontalAlign="Left" />
+                    <ItemStyle HorizontalAlign="Left" />
+                    <ItemTemplate>
+                        <asp:Label ID="lblBirthDate" runat="server" Text='<%#Eval("BirthDate") %>'>    
+                        </asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Edit">
+                    <HeaderStyle HorizontalAlign="Left" />
+                    <ItemStyle HorizontalAlign="Left" />
+                    <ItemTemplate>
+                        <asp:LinkButton ID="lnkEdit" runat="server" Text="Edit" CausesValidation="false"
+                            CommandArgument='    
                                                 <%#Eval("Id") %>'
-                                OnCommand="lnkEdit_Command" ToolTip="Edit" />
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Delete">
-                        <HeaderStyle HorizontalAlign="Left" />
-                        <ItemStyle HorizontalAlign="Left" />
-                        <ItemTemplate>
-                            <%--      <asp:LinkButton ID="lnkDelete" runat="server" Text="Delete" CausesValidation="false"
-                                                CommandArgument='    
+                            OnCommand="lnkEdit_Command" ToolTip="Edit" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Delete">
+                    <HeaderStyle HorizontalAlign="Left" />
+                    <ItemStyle HorizontalAlign="Left" />
+                    <ItemTemplate>
+                        <asp:LinkButton ID="lnkDelete" runat="server" Text="Delete" CausesValidation="false"
+                            CommandArgument='    
                                                     <%#Eval("Id") %>'
-                                                CommandName="Delete" OnCommand="lnkDelete_Command"
-                                                OnClientClick="return confirm('Are you sure you want to delete?')" ToolTip="Delete" />--%>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                </Columns>
-            </asp:GridView>
-            <%--added gridview style layout and functionality  here--%>
-        </fieldset>
-    </body>
+                            CommandName="Delete" OnCommand="lnkDelete_Command"
+                            OnClientClick="return confirm('Are you sure you want to delete?')" ToolTip="Delete" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
+        <%--added gridview style layout and functionality  here--%>
+    </fieldset>
+
     <br />
     <br />
 </asp:Content>
