@@ -1,38 +1,35 @@
-﻿using System.Net;
-using System.Net.Http;
+﻿using CRUDCustomersWebAPI.Models;
+using CRUDCustomersWebAPI.Services;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace CRUDCustomersWebAPI.Controllers
 {
+    [RoutePrefix("api/[controller]")]
     public class CustomersController : ApiController
     {
-        [Route("api/[controller]")]
-        [HttpGet]
-        public IHttpActionResult CheckId(int id)
+        private readonly ICustomersService _customersService;
+        public CustomersController(ICustomersService customersService)
         {
-            if (id < 10) // No error hanbdling at all:
+            customersService = _customersService;
+        }
+        [HttpGet]
+        [Route("GetCustomers")]
+        [ResponseType(typeof(IEnumerable<Customers>))]
+        public async Task<IHttpActionResult> GetCustomers()
+        {
+            try
             {
-                int a = 1;
-                int b = 0;
-                int c = 0;
-                c = a / b; //it would cause exception.
+                var result = await _customersService.GetCustomers();
+                return (IHttpActionResult)result;
             }
-            else if (id < 20) // Error handling by HttpResponseException with HttpStatusCode
+            catch (System.Exception ex)
             {
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
-            }
-            else if (id < 30) // Error handling by HttpResponseException with HttpResponseMessage
-            {
-                var response = new HttpResponseMessage(HttpStatusCode.BadRequest)
-                {
-                    Content = new StringContent(string.Format("No Employee found with ID = {0}", 10)),
-                    ReasonPhrase = "Employee Not Found"
-                };
 
-                throw new HttpResponseException(response);
+                throw ex;
             }
-
-            return Ok(id);
         }
     }
 }

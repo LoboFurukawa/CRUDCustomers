@@ -1,4 +1,5 @@
 ﻿using CRUDCustomersWebAPI.Models;
+using Dapper;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -13,9 +14,9 @@ namespace CRUDCustomersWebAPI.Repository
     public class CustomersRepository : ICustomersRepository
     {
         private IDbConnection _db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
-        public List<Customers> GetCustomers()
+        public Task<IEnumerable<Customers>> GetCustomers()
         {
-            throw new NotImplementedException();
+            return _db.QueryAsync<Customers>("SELECT * FROM TB_Customers");
         }
     }
 }

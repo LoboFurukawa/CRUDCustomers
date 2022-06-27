@@ -1,0 +1,5 @@
+D:\Project\CRUDCustomers\CRUDCustomers\CRUDCustomersDataBase\bin\Debug\CRUDCustomersDataBase.dacpac
+D:\Project\CRUDCustomers\CRUDCustomers\CRUDCustomersDataBase\bin\Debug\CRUDCustomersDataBase.dll
+D:\Project\CRUDCustomers\CRUDCustomers\CRUDCustomersDataBase\bin\Debug\CRUDCustomersDataBase.pdb
+D:\Project\CRUDCustomers\CRUDCustomers\CRUDCustomersDataBase\obj\Debug\CRUDCustomersDataBase.dll
+D:\Project\CRUDCustomers\CRUDCustomers\CRUDCustomersDataBase\obj\Debug\CRUDCustomersDataBase.pdb

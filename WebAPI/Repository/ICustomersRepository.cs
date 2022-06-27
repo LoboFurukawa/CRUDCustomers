@@ -8,6 +8,6 @@ namespace CRUDCustomersWebAPI.Models
 {
     public interface ICustomersRepository
     {
-        List<Customers> GetCustomers();
+        Task<IEnumerable<Customers>> GetCustomers();
     }
 }
