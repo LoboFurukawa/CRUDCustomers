@@ -1,4 +1,5 @@
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\CRUDCustomersWebAPI.dll.config
+D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\CRUDCustomersWebAPI.xml
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\CRUDCustomersWebAPI.dll
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\CRUDCustomersWebAPI.pdb
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\roslyn\csc.exe
@@ -54,6 +55,7 @@ D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\Antlr3.Runtime.dll
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\Microsoft.Web.Infrastructure.dll
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\Newtonsoft.Json.dll
+D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\Swashbuckle.Core.dll
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\System.Net.Http.Formatting.dll
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\System.Web.Helpers.dll
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\System.Web.Http.dll
@@ -64,6 +66,7 @@ D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\System.Web.Razor.dll
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\System.Web.WebPages.Deployment.dll
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\System.Web.WebPages.dll
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\System.Web.WebPages.Razor.dll
+D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\WebActivatorEx.dll
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\WebGrease.dll
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\Newtonsoft.Json.xml
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\System.Net.Http.Formatting.xml
@@ -78,7 +81,6 @@ D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\System.Web.WebPages.Deployment
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\System.Web.WebPages.Razor.xml
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\Antlr3.Runtime.pdb
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\obj\Debug\WebAPI.csproj.AssemblyReference.cache
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\obj\Debug\WebAPI.csproj.CoreCompileInputs.cache
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\obj\Debug\WebAPI.csproj.CopyComplete
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\obj\Debug\CRUDCustomersWebAPI.dll

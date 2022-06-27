@@ -1,9 +1,0 @@
-D:\Project\CRUDCustomers\CRUDCustomers\CRUDCustomersDataBase\bin\Debug\CRUDCustomersDataBase.dacpac
-D:\Project\CRUDCustomers\CRUDCustomers\CRUDCustomersDataBase\bin\Debug\CRUDCustomersDataBase.dll
-D:\Project\CRUDCustomers\CRUDCustomers\CRUDCustomersDataBase\bin\Debug\CRUDCustomersDataBase.pdb
-D:\Project\CRUDCustomers\CRUDCustomers\CRUDCustomersDataBase\obj\Debug\Model.xml
-D:\Project\CRUDCustomers\CRUDCustomers\CRUDCustomersDataBase\obj\Debug\refactor.xml
-D:\Project\CRUDCustomers\CRUDCustomers\CRUDCustomersDataBase\obj\Debug\postdeploy.sql
-D:\Project\CRUDCustomers\CRUDCustomers\CRUDCustomersDataBase\obj\Debug\predeploy.sql
-D:\Project\CRUDCustomers\CRUDCustomers\CRUDCustomersDataBase\obj\Debug\CRUDCustomersDataBase.dll
-D:\Project\CRUDCustomers\CRUDCustomers\CRUDCustomersDataBase\obj\Debug\CRUDCustomersDataBase.pdb
