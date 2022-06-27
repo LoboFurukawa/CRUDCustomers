@@ -72,7 +72,6 @@ D:\Project\CRUDCustomers\CRUDCustomers\WebMVC\bin\System.Web.WebPages.Razor.xml
 D:\Project\CRUDCustomers\CRUDCustomers\WebMVC\bin\Newtonsoft.Json.xml
 D:\Project\CRUDCustomers\CRUDCustomers\WebMVC\bin\Antlr3.Runtime.pdb
 D:\Project\CRUDCustomers\CRUDCustomers\WebMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Project\CRUDCustomers\CRUDCustomers\WebMVC\obj\Debug\WebMVC.csproj.AssemblyReference.cache
 D:\Project\CRUDCustomers\CRUDCustomers\WebMVC\obj\Debug\WebMVC.csproj.CoreCompileInputs.cache
 D:\Project\CRUDCustomers\CRUDCustomers\WebMVC\obj\Debug\WebMVC.csproj.CopyComplete
 D:\Project\CRUDCustomers\CRUDCustomers\WebMVC\obj\Debug\WebMVC.dll

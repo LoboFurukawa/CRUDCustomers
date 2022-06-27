@@ -17,11 +17,6 @@ namespace CRUDCustomersWebAPI.Services
             customersRepository = _customersRepository;
         }
 
-        public Task<string> DeleteCustomers(Customers customersInfo)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<IEnumerable<Address>> GetAddressCustomerById(Customers customers)
         {
             CustomersRepository customersRepository = new CustomersRepository();
@@ -67,7 +62,7 @@ namespace CRUDCustomersWebAPI.Services
             }
         }
 
-        public Task<IEnumerable<DispatchAgency>> GetDispatchAgency()
+        public async Task<IEnumerable<DispatchAgency>> GetDispatchAgency()
         {
             CustomersRepository customersRepository = new CustomersRepository();
             try
@@ -82,39 +77,124 @@ namespace CRUDCustomersWebAPI.Services
             }
         }
 
-        public Task<IEnumerable<MaritalStatus>> GetMaritalStatus()
+        public async Task<IEnumerable<MaritalStatus>> GetMaritalStatus()
         {
-            throw new NotImplementedException();
+            CustomersRepository customersRepository = new CustomersRepository();
+            try
+            {
+                IEnumerable<MaritalStatus> customers = await customersRepository.GetMaritalStatus();
+                return customers;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
-        public Task<IEnumerable<UFs>> GetUFs()
+        public async Task<IEnumerable<UFs>> GetUFs()
         {
-            throw new NotImplementedException();
+            CustomersRepository customersRepository = new CustomersRepository();
+            try
+            {
+                IEnumerable<UFs> customers = await customersRepository.GetUFs();
+                return customers;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
-        public Task<string> InsertCustomers(Customers customersInfo)
+        public async Task<int> InsertCustomers(Customers customersInfo)
         {
-            throw new NotImplementedException();
+            CustomersRepository customersRepository = new CustomersRepository();
+            try
+            {
+                var customers = await customersRepository.InsertCustomers(customersInfo);
+                return customers;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
-        public Task<string> InsertDispatchAgency(DispatchAgency dispatchAgency)
+        public async Task<int> InsertDispatchAgency(DispatchAgency dispatchAgency)
         {
-            throw new NotImplementedException();
+            CustomersRepository customersRepository = new CustomersRepository();
+            try
+            {
+                var customers = await customersRepository.InsertDispatchAgency(dispatchAgency);
+                return customers;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
-        public Task<string> InsertMaritalStatus(MaritalStatus maritalStatus)
+        public async Task<int> InsertMaritalStatus(MaritalStatus maritalStatus)
         {
-            throw new NotImplementedException();
+            CustomersRepository customersRepository = new CustomersRepository();
+            try
+            {
+                var customers = await customersRepository.InsertMaritalStatus(maritalStatus);
+                return customers;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
-        public Task<string> InsertUFs(UFs uFs)
+        public async Task<int> InsertUFs(UFs uFs)
         {
-            throw new NotImplementedException();
+            CustomersRepository customersRepository = new CustomersRepository();
+            try
+            {
+                var customers = await customersRepository.InsertUFs(uFs);
+                return customers;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
-        public Task<string> UpdateCustomers(Customers customersInfo)
+        public async Task<int> UpdateCustomers(Customers customersInfo)
         {
-            throw new NotImplementedException();
+            CustomersRepository customersRepository = new CustomersRepository();
+            try
+            {
+                var customers = await customersRepository.UpdateCustomers(customersInfo);
+                return customers;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public async Task<int> DeleteCustomers(Customers customersInfo)
+        {
+            CustomersRepository customersRepository = new CustomersRepository();
+            try
+            {
+                var customers = await customersRepository.DeleteCustomers(customersInfo);
+                return customers;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

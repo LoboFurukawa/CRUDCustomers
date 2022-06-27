@@ -15,11 +15,11 @@ namespace CRUDCustomersWebAPI.Services
         Task<IEnumerable<DispatchAgency>> GetDispatchAgency();
         Task<IEnumerable<Customers>> GetCustomerById(Customers customers);
         Task<IEnumerable<Address>> GetAddressCustomerById(Customers customers);
-        Task<string> InsertCustomers(Customers customersInfo);
-        Task<string> InsertMaritalStatus(MaritalStatus maritalStatus);
-        Task<string> InsertUFs(UFs uFs);
-        Task<string> InsertDispatchAgency(DispatchAgency dispatchAgency);
-        Task<string> UpdateCustomers(Customers customersInfo);
-        Task<string> DeleteCustomers(Customers customersInfo);
+        Task<int> InsertCustomers(Customers customersInfo);
+        Task<int> InsertMaritalStatus(MaritalStatus maritalStatus);
+        Task<int> InsertUFs(UFs uFs);
+        Task<int> InsertDispatchAgency(DispatchAgency dispatchAgency);
+        Task<int> UpdateCustomers(Customers customersInfo);
+        Task<int> DeleteCustomers(Customers customersInfo);
     }
 }

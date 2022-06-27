@@ -15,11 +15,6 @@ namespace CRUDCustomersWebAPI.Repository
     {
         private IDbConnection _db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
 
-        public Task<string> DeleteCustomers(Customers customersInfo)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task<IEnumerable<Address>> GetAddressCustomerById(Customers customers)
         {
             return _db.QueryAsync<Address>("SELECT * FROM TB_Address WHERE IdCustomer = @IdCustomer", new { IdCustomer = customers.Id });
@@ -233,6 +228,25 @@ namespace CRUDCustomersWebAPI.Repository
           IdUf = customersInfo.Address.IdUF,
           IdCustomer = customersInfo.Id,
       });
+                }
+                return rowsAffected;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public async Task<int> DeleteCustomers(Customers customersInfo)
+        {
+            try
+            {
+                int rowsAffected = await this._db.ExecuteAsync(@"DELETE TB_Address WHERE IdCustomer = @IdCustomer", new { IdCustomer = customersInfo.Id });
+
+                if (rowsAffected > 0)
+                {
+                    rowsAffected = await this._db.ExecuteAsync(@"DELETE TB_Customers WHERE Id = @Id", new { Id = customersInfo.Id });
                 }
                 return rowsAffected;
             }
