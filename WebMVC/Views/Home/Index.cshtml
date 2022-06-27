@@ -1,30 +1,206 @@
-﻿@model IEnumerable<WebMVC.Models.Customers>
+﻿@*@model WebMVC.Models.Customers*@
 @{
     ViewBag.Title = "Home Page";
+    var customers = ViewData["CustomerInfo"] as WebMVC.Models.Customers;
 }
-<div class="form-horizontal">
-    <hr />
-    <div class="form-group">
-        <table class="table table-responsive" style="width:400px">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.CPF)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-            </tr>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CPF)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                </tr>
-            }
-        </table>
+<form method="POST">
+    <legend>Cliente</legend>
+    <div class="row">
+        <div class="col-md-3">
+            <label>CPF *</label>
+        </div>
+        <div class="col-md-3">
+            <label>Nome *</label>
+        </div>
     </div>
+    <div class="row">
+        <div class="col-md-3">
+            @using (Html.BeginForm())
+            {
+                <input class="form-control" ID="txtCPF" name="txtCPF" runat="server" placeholder="000.000.000.00"></input>
+            }
+        </div>
+        <div class="col-md-3">
+            @using (Html.BeginForm("Index", "Customer", FormMethod.Post))
+            {
+                @Html.TextBox("Name", "Enter Name", new { @class = "form-control" })
+                @*@Html.TextBoxFor(m => m.FirstOrDefault().Name, new { @Value = "Enter Name", @class = "form-control" })*@
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <label>RG</label>
+        </div>
+        <div class="col-md-3">
+            <label>Data Expedição</label>
+        </div>
+        <div class="col-md-3">
+            <label>Órgão expedição</label>
+        </div>
+        <div class="col-md-3">
+            <label>UF Expedição</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            @using (Html.BeginForm())
+            {
+                <input class="form-control" ID="txtRG" name="txtRG" runat="server"></input>
+            }
+        </div>
+        <div class="col-md-3">
+            @using (Html.BeginForm())
+            {
+                <input class="form-control" ID="txtShippingDate" name="txtShippingDate" runat="server" placeholder="00/00/0000"></input>
+            }
+        </div>
+        <div class="col-md-3">
+            @using (Html.BeginForm())
+            {
+                @Html.DropDownList("Description", new SelectList(ViewBag.lstDispatchAgency), new { @class = "form-control" })
+            }
+        </div>
+        <div class="col-md-3">
+            @using (Html.BeginForm())
+            {
+                @Html.DropDownList("Description", new SelectList(ViewBag.UFsList), new { @class = "form-control" })
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <label>Data de Nascimento *</label>
+        </div>
+        <div class="col-md-3">
+            <label>Sexo *</label>
+        </div>
+        <div class="col-md-3">
+            <label>Estado civil *</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            @using (Html.BeginForm())
+            {
+                <input class="form-control" ID="txtBirthDate" name="txtBirthDate" runat="server" placeholder="00/00/0000"></input>
+            }
+        </div>
+        <div class="col-md-3">
+            @using (Html.BeginForm())
+            {
+                @Html.DropDownList("FooBarDropDown", new List<SelectListItem>
+           {
+               new SelectListItem{ Text="Selecione", Value = "0" },
+               new SelectListItem{ Text="Masculino", Value = "M" },
+               new SelectListItem{ Text="Feminino", Value = "F" },
+           }, new { @class = "form-control" })
+            }
+        </div>
+        <div class="col-md-3">
+            @using (Html.BeginForm())
+            {
+                @Html.DropDownList("Description", new SelectList(ViewBag.lstMaritalStatus), new { @class = "form-control" })
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label>CEP *</label>
+        </div>
+        <div class="col-md-2">
+            <label>Rua *</label>
+        </div>
+        <div class="col-md-2">
+            <label>Numero *</label>
+        </div>
+        <div class="col-md-2">
+            <label>Complemento </label>
+        </div>
+    </div>
+    <div class="col-md-2" style="display: none">
+        @using (Html.BeginForm())
+        {
+            <input class="form-control" ID="txtIdAddress" name="txtIdAddress" runat="server"></input>
+        }
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-group col-md-8">
+                @using (Html.BeginForm())
+                {
+                    <input type="text" class="form-control" placeholder="CEP" name="txtPostalCode" id="txtPostalCode" aria-label="CEP" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                    </div>
+                }
+            </div>
+        </div>
+        @*<button class="btn btn-primary"><input class="form-control" ID="txtCEP" runat="server"></input><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>*@
+        <div class="col-md-2">
+            @using (Html.BeginForm())
+            {
+                <input class="form-control" ID="txtStreet" name="txtStreet" runat="server"></input>
+            }
+        </div>
+        <div class="col-md-2">
+            @using (Html.BeginForm())
+            {
+                <input class="form-control" ID="txtNumber" name="txtNumber" runat="server"></input>
+            }
+        </div>
+        <div class="col-md-2">
+            @using (Html.BeginForm())
+            {
+                <input class="form-control" ID="txtComplement" name="txtComplement" runat="server"></input>
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <label>Bairro *</label>
+        </div>
+        <div class="col-md-3">
+            <label>Cidade *</label>
+        </div>
+        <div class="col-md-3">
+            <label>UF *</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            @using (Html.BeginForm())
+            {
+                <input class="form-control" ID="txtNeighborhood" name="txtNeighborhood" runat="server"></input>
+            }
+        </div>
+        <div class="col-md-3">
+            @using (Html.BeginForm())
+            {
+                <input class="form-control" ID="txtCity" name="txtCity" runat="server"></input>
+            }
+        </div>
+        <div class="col-md-3">
+            @using (Html.BeginForm())
+            {
+                @Html.DropDownList("Description", new SelectList(ViewBag.UFsListAddress), new { @class = "form-control" })
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+        </div>
+        <div class="col-md-4">
+            @using (Html.BeginForm())
+            {
+                <button ID="btnSubmit" type="submit" class="btn btn-primary" runat="server" Text="Adicionar">Adicionar</button>
+            }
+        </div>
+    </div>
+</form>
+
+<div>
+    @{
+        Html.RenderPartial("_ListCustomers");
+    }
 </div>

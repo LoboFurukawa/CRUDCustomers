@@ -67,6 +67,7 @@ D:\Project\CRUDCustomers\CRUDCustomers\WebForms\bin\Newtonsoft.Json.xml
 D:\Project\CRUDCustomers\CRUDCustomers\WebForms\bin\Antlr3.Runtime.pdb
 D:\Project\CRUDCustomers\CRUDCustomers\WebForms\bin\Microsoft.AspNet.FriendlyUrls.xml
 D:\Project\CRUDCustomers\CRUDCustomers\WebForms\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Project\CRUDCustomers\CRUDCustomers\WebForms\obj\Debug\WebForms.csproj.AssemblyReference.cache
 D:\Project\CRUDCustomers\CRUDCustomers\WebForms\obj\Debug\WebForms.csproj.CoreCompileInputs.cache
 D:\Project\CRUDCustomers\CRUDCustomers\WebForms\obj\Debug\WebForms.csproj.CopyComplete
 D:\Project\CRUDCustomers\CRUDCustomers\WebForms\obj\Debug\WebForms.dll

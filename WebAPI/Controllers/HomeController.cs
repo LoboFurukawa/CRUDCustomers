@@ -14,5 +14,9 @@ namespace CRUDCustomersWebAPI.Controllers
 
             return View();
         }
+        public ActionResult _ListCustomers()
+        {
+            return PartialView();
+        }
     }
 }
