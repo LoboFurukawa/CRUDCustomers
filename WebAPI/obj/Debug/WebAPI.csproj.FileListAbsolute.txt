@@ -85,3 +85,6 @@ D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\obj\Debug\WebAPI.csproj.CoreCompil
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\obj\Debug\WebAPI.csproj.CopyComplete
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\obj\Debug\CRUDCustomersWebAPI.dll
 D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\obj\Debug\CRUDCustomersWebAPI.pdb
+D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\Dapper.dll
+D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\bin\Dapper.xml
+D:\Project\CRUDCustomers\CRUDCustomers\WebAPI\obj\Debug\WebAPI.csproj.AssemblyReference.cache
