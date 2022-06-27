@@ -7,23 +7,36 @@ using System.Web.Http.Description;
 
 namespace CRUDCustomersWebAPI.Controllers
 {
-    [RoutePrefix("api/[controller]")]
+    //[Route("api/[controller]")]
     public class CustomersController : ApiController
     {
-        private readonly ICustomersService _customersService;
-        public CustomersController(ICustomersService customersService)
-        {
-            customersService = _customersService;
-        }
+        private readonly ICustomersRepository _customersRepository;
+
         [HttpGet]
-        [Route("GetCustomers")]
         [ResponseType(typeof(IEnumerable<Customers>))]
-        public async Task<IHttpActionResult> GetCustomers()
+        public async Task<IEnumerable<Customers>> GetCustomers()
         {
+            CustomersService customersService = new CustomersService(_customersRepository);
             try
             {
-                var result = await _customersService.GetCustomers();
-                return (IHttpActionResult)result;
+                var result = await customersService.GetCustomers();
+                return result;
+            }
+            catch (System.Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        [HttpGet]
+        [ResponseType(typeof(IEnumerable<Customers>))]
+        public async Task<IEnumerable<Customers>> GetMaritalStatus()
+        {
+            CustomersService customersService = new CustomersService(_customersRepository);
+            try
+            {
+                var result = await customersService.GetMaritalStatus();
+                return result;
             }
             catch (System.Exception ex)
             {
